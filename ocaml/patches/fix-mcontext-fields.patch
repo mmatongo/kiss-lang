@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<title>fix-mcontext-fields.patch\ocaml\community - aports - Unnamed repository; edit this file 'description' to name the repository.
+</title>
+<meta name='generator' content='cgit v1.2.1'/>
+<meta name='robots' content='index, nofollow'/>
+<link rel='stylesheet' type='text/css' href='/cgit.css'/>
+<link rel='shortcut icon' href='//alpinelinux.org/alpine-logo.ico'/>
+<link rel='alternate' title='Atom feed' href='http://git.alpinelinux.org/aports/atom/community/ocaml/fix-mcontext-fields.patch?h=master' type='application/atom+xml'/>
+<link rel='vcs-git' href='git://git.alpinelinux.org/aports' title='aports Git repository'/>
+<link rel='vcs-git' href='https://git.alpinelinux.org/aports' title='aports Git repository'/>
+</head>
+<body>
+<div id='cgit'><table id='header'>
+<tr>
+<td class='logo' rowspan='2'><a href='/'><img src='//wiki.alpinelinux.org/images/alogo.png' alt='cgit logo'/></a></td>
+<td class='main'><a href='/'>index</a> : <a title='aports' href='/aports/'>aports</a></td><td class='form'><form method='get'>
+<select name='h' onchange='this.form.submit();'>
+<option value='1.10-stable'>1.10-stable</option>
+<option value='1.9'>1.9</option>
+<option value='2.0-stable'>2.0-stable</option>
+<option value='2.1-stable'>2.1-stable</option>
+<option value='2.2-stable'>2.2-stable</option>
+<option value='2.3-stable'>2.3-stable</option>
+<option value='2.4-stable'>2.4-stable</option>
+<option value='2.5-stable'>2.5-stable</option>
+<option value='2.6-stable'>2.6-stable</option>
+<option value='2.7-stable'>2.7-stable</option>
+<option value='3.0-stable'>3.0-stable</option>
+<option value='3.1-stable'>3.1-stable</option>
+<option value='3.10-stable'>3.10-stable</option>
+<option value='3.11-stable'>3.11-stable</option>
+<option value='3.12-stable'>3.12-stable</option>
+<option value='3.2-stable'>3.2-stable</option>
+<option value='3.3-stable'>3.3-stable</option>
+<option value='3.4-stable'>3.4-stable</option>
+<option value='3.5-stable'>3.5-stable</option>
+<option value='3.6-stable'>3.6-stable</option>
+<option value='3.7-stable'>3.7-stable</option>
+<option value='3.8-stable'>3.8-stable</option>
+<option value='3.9-stable'>3.9-stable</option>
+<option value='master' selected='selected'>master</option>
+</select> <input type='submit' value='switch'/></form></td></tr>
+<tr><td class='sub'>Unnamed repository; edit this file 'description' to name the repository.
+</td><td class='sub right'>uwsgi</td></tr></table>
+<table class='tabs'><tr><td>
+<a href='/aports/about/'>about</a><a href='/aports/'>summary</a><a href='/aports/refs/'>refs</a><a href='/aports/log/community/ocaml/fix-mcontext-fields.patch'>log</a><a class='active' href='/aports/tree/community/ocaml/fix-mcontext-fields.patch'>tree</a><a href='/aports/commit/community/ocaml/fix-mcontext-fields.patch'>commit</a><a href='/aports/diff/community/ocaml/fix-mcontext-fields.patch'>diff</a><a href='/aports/stats/community/ocaml/fix-mcontext-fields.patch'>stats</a></td><td class='form'><form class='right' method='get' action='/aports/log/community/ocaml/fix-mcontext-fields.patch'>
+<select name='qt'>
+<option value='grep'>log msg</option>
+<option value='author'>author</option>
+<option value='committer'>committer</option>
+<option value='range'>range</option>
+</select>
+<input class='txt' type='search' size='10' name='q' value=''/>
+<input type='submit' value='search'/>
+</form>
+</td></tr></table>
+<div class='path'>path: <a href='/aports/tree/'>root</a>/<a href='/aports/tree/community'>community</a>/<a href='/aports/tree/community/ocaml'>ocaml</a>/<a href='/aports/tree/community/ocaml/fix-mcontext-fields.patch'>fix-mcontext-fields.patch</a></div><div class='content'>blob: 23b4875d21f20b613256c36bd74542660164e62d (<a href='/aports/plain/community/ocaml/fix-mcontext-fields.patch'>plain</a>) (<a href='/aports/blame/community/ocaml/fix-mcontext-fields.patch'>blame</a>)
+<table summary='blob content' class='blob'>
+<tr><td class='linenumbers'><pre><a id='n1' href='#n1'>1</a>
+<a id='n2' href='#n2'>2</a>
+<a id='n3' href='#n3'>3</a>
+<a id='n4' href='#n4'>4</a>
+<a id='n5' href='#n5'>5</a>
+<a id='n6' href='#n6'>6</a>
+<a id='n7' href='#n7'>7</a>
+<a id='n8' href='#n8'>8</a>
+<a id='n9' href='#n9'>9</a>
+<a id='n10' href='#n10'>10</a>
+<a id='n11' href='#n11'>11</a>
+<a id='n12' href='#n12'>12</a>
+<a id='n13' href='#n13'>13</a>
+<a id='n14' href='#n14'>14</a>
+<a id='n15' href='#n15'>15</a>
+<a id='n16' href='#n16'>16</a>
+<a id='n17' href='#n17'>17</a>
+<a id='n18' href='#n18'>18</a>
+<a id='n19' href='#n19'>19</a>
+<a id='n20' href='#n20'>20</a>
+<a id='n21' href='#n21'>21</a>
+<a id='n22' href='#n22'>22</a>
+<a id='n23' href='#n23'>23</a>
+<a id='n24' href='#n24'>24</a>
+<a id='n25' href='#n25'>25</a>
+<a id='n26' href='#n26'>26</a>
+<a id='n27' href='#n27'>27</a>
+</pre></td>
+<td class='lines'><pre><code>diff -Nru a/runtime/signals_osdep.h b/runtime/signals_osdep.h
+<span style="color:#000000; font-weight:bold">--- a/runtime/signals_osdep.h   2019-06-14 08:21:51.000000000 -0300</span>
+<span style="color:#0057ae">+++ b/runtime/signals_osdep.h   2019-07-16 14:21:56.751434439 -0300</span>
+<span style="color:#010181">&#64;&#64; -297,11 +297,19 &#64;&#64;</span>
+      sigact.sa_flags = 0
+ 
+   typedef unsigned long context_reg;
+<span style="color:#000000; font-weight:bold">-  #define CONTEXT_PC (context-&gt;regs-&gt;nip)</span>
+<span style="color:#000000; font-weight:bold">-  #define CONTEXT_EXCEPTION_POINTER (context-&gt;regs-&gt;gpr[29])</span>
+<span style="color:#000000; font-weight:bold">-  #define CONTEXT_YOUNG_LIMIT (context-&gt;regs-&gt;gpr[30])</span>
+<span style="color:#000000; font-weight:bold">-  #define CONTEXT_YOUNG_PTR (context-&gt;regs-&gt;gpr[31])</span>
+<span style="color:#000000; font-weight:bold">-  #define CONTEXT_SP (context-&gt;regs-&gt;gpr[1])</span>
+<span style="color:#0057ae">+  #ifdef __powerpc64__</span>
+<span style="color:#0057ae">+    #define CONTEXT_PC (context-&gt;gp_regs[32])</span>
+<span style="color:#0057ae">+    #define CONTEXT_EXCEPTION_POINTER (context-&gt;gp_regs[29])</span>
+<span style="color:#0057ae">+    #define CONTEXT_YOUNG_LIMIT (context-&gt;gp_regs[30])</span>
+<span style="color:#0057ae">+    #define CONTEXT_YOUNG_PTR (context-&gt;gp_regs[31])</span>
+<span style="color:#0057ae">+    #define CONTEXT_SP (context-&gt;gp_regs[1])</span>
+<span style="color:#0057ae">+  #else</span>
+<span style="color:#0057ae">+    #define CONTEXT_PC (context-&gt;regs-&gt;nip)</span>
+<span style="color:#0057ae">+    #define CONTEXT_EXCEPTION_POINTER (context-&gt;regs-&gt;gpr[29])</span>
+<span style="color:#0057ae">+    #define CONTEXT_YOUNG_LIMIT (context-&gt;regs-&gt;gpr[30])</span>
+<span style="color:#0057ae">+    #define CONTEXT_YOUNG_PTR (context-&gt;regs-&gt;gpr[31])</span>
+<span style="color:#0057ae">+    #define CONTEXT_SP (context-&gt;regs-&gt;gpr[1])</span>
+<span style="color:#0057ae">+  #endif</span>
+ 
+ /****************** PowerPC, NetBSD */
+</code></pre></td></tr></table>
+</div> <!-- class=content -->
+<div class='footer'>generated by <a href='https://git.zx2c4.com/cgit/about/'>cgit v1.2.1</a> (<a href='https://git-scm.com/'>git 2.18.0</a>) at 2020-09-04 20:21:20 +0000</div>
+</div> <!-- id=cgit -->
+</body>
+</html>
