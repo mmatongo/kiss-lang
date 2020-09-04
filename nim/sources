@@ -1,0 +1,2 @@
+https://github.com/nim-lang/Nim/archive/v1.2.6.tar.gz
+git+https://github.com/nim-lang/csources#f72f471adb743bea4f8d8c59d19aa1cb885dcc59 csources

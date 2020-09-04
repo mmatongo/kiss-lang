@@ -1,0 +1,57 @@
+#!/bin/sh -e
+
+cd csources
+
+# Build nim source files
+echo "Building nim csources..."
+./build.sh
+cd ..
+
+# Build a release version of the "koch" maintenance program
+echo "Building koch..."
+bin/nim compile -d:release koch
+
+# Build a release version of the nim compiler
+echo "Building nim..."
+./koch boot -d:release 
+
+# Build nimsuggest, nimgrep, and nimpretty
+echo "Building nimsuggest, nimpretty, nimgrep..."
+./koch tools
+
+# Build nimrtl.nim
+echo "Building nimrtl..."
+cd lib
+../bin/nim c --app:lib -d:createNimRtl -d:release nimrtl.nim
+cd ..
+
+# Nim
+#./koch install "$1"
+
+# installs bins / dirs
+install -Dm755 bin/nim "$1/usr/bin/nim"
+install -Dm755 bin/nimble "$1/usr/bin/nimble"
+install -Dm755 bin/nimgrep "$1/usr/bin/nimgrep"
+install -Dm755 bin/nimpretty "$1/usr/bin/nimpretty"
+install -Dm755 bin/nimsuggest "$1/usr/bin/nimsuggest"
+#mkdir -pm755 "$1/{etc/nim,usr/lib/nim}"
+
+# Copy lib and config folders to respective dirs
+mkdir -p "$1/usr/lib/nim"
+mkdir -p "$1/etc/nim"
+
+cp -r lib "$1/usr/lib/nim"
+cp -r config "$1/etc/nim"
+
+# Workaround Nim's nonstandard header file placement
+# (https://bugs.archlinux.org/task/50252)
+mkdir -p "$1/usr/include"
+ln -s "$1/lib/nim/*.h" "$1/usr/include/"
+
+# Fix unusual placement of shared object files
+ln -s "$1/usr/lib/nim/libnimrtl.so" "$1/usr/lib/libnimrtl.so"
+
+# Nimble looks for nimscriptapi.nim in /usr/bin/nimblepkg/, of all places
+mkdir -p "$1/usr/share/nimble"
+cp -r dist/nimble/src/nimblepkg "$1/usr/share/nimble"
+ln -s "$1/usr/share/nimble" "$1/usr/bin/nimblepkg"
