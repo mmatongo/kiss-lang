@@ -10,6 +10,7 @@ to put into one place the languages you might end up
 needing.
 
 #### AVAILABLE LANGUAGES
+---
 
 - [x] Nim
 - [x] Haskell
@@ -21,6 +22,7 @@ needing.
 - [x] Vala
 
 #### WIP LANGUAGES
+---
 
 - [x] Crystal
 - [x] C#
@@ -35,6 +37,7 @@ needing.
 
 
 #### REQUIREMENTS
+---
 
 In order to use this repo you need to have the following
 repos set-up and pointing to your ``KISS_PATH``.
