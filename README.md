@@ -1,7 +1,7 @@
 ## KISS LANGUAGE REPO
 ---
 
-This is [KISS Linux](k1ss.org) repo dedicated to language
+This is [KISS Linux](https://k1ss.org) repo dedicated to language
 compilers etc.
 
 Because KISS is source based and pretty much every package
@@ -58,7 +58,8 @@ You will also need @eudaldgr 's repo
 ```
 $ git clone https://github.com/eudaldgr/kiss-repo
 $ cd kiss-repo
-$ for i in -- $(ls -d -- */); do export KISS_PATH=$PWD/$i:$KISS_PATH:; done```
+$ for i in -- $(ls -d -- */); do export KISS_PATH=$PWD/$i:$KISS_PATH:; done
+```
 
 
 ---
