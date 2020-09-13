@@ -23,7 +23,7 @@ echo "Building nimsuggest, nimpretty, nimgrep..."
 echo "Building nimrtl..."
 cd lib
 ../bin/nim c --app:lib -d:createNimRtl -d:release nimrtl.nim
-cd ..
+cd -
 
 # Nim
 #./koch install "$1"
