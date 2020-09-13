@@ -5,7 +5,7 @@ cd csources
 # Build nim source files
 echo "Building nim csources..."
 ./build.sh
-cd ..
+cd -
 
 # Build a release version of the "koch" maintenance program
 echo "Building koch..."
