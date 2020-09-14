@@ -42,13 +42,13 @@ install -Dm755 bin/nimsuggest "$1/usr/bin/nimsuggest"
 mkdir -p "$1/usr/lib/nim"
 mkdir -p "$1/etc/nim"
 
-cp -r lib "$1/usr/lib/nim"
+cp -r lib/* "$1/usr/lib/nim"
 cp -r config "$1/etc/nim"
 
 # Workaround Nim's nonstandard header file placement
 # (https://bugs.archlinux.org/task/50252)
 mkdir -p "$1/usr/include"
-ln -s "$1/lib/nim/*.h" "$1/usr/include/"
+ln -s lib/nim/*.h "$1/usr/include/"
 
 # Fix unusual placement of shared object files
 ln -s "$1/usr/lib/nim/libnimrtl.so" "$1/usr/lib/libnimrtl.so"
