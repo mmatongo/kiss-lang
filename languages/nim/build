@@ -1,11 +1,12 @@
 #!/bin/sh -e
 
-cd csources
+(
+    cd csources
 
-# Build nim source files
-echo "Building nim csources..."
-./build.sh
-cd -
+    # Build nim source files
+    echo "Building nim csources..."
+    ./build.sh
+)
 
 # Build a release version of the "koch" maintenance program
 echo "Building koch..."
@@ -20,10 +21,11 @@ echo "Building nimsuggest, nimpretty, nimgrep..."
 ./koch tools
 
 # Build nimrtl.nim
-echo "Building nimrtl..."
-cd lib
-../bin/nim c --app:lib -d:createNimRtl -d:release nimrtl.nim
-cd -
+(
+    echo "Building nimrtl..."
+    cd lib
+    ../bin/nim c --app:lib -d:createNimRtl -d:release nimrtl.nim
+)
 
 # Nim
 #./koch install "$1"
