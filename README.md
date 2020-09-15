@@ -10,12 +10,6 @@ to put into one place the languages you might end up
 needing.
 
 
-
-#### WHY ANOTHER REPO
----
-
-Why not?
-
 #### AVAILABLE LANGUAGES
 ---
 
