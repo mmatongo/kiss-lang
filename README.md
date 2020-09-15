@@ -9,6 +9,13 @@ can be managed by anyone, I saw the need to make this repo
 to put into one place the languages you might end up
 needing.
 
+
+
+#### WHY ANOTHER REPO
+---
+
+Why not?
+
 #### AVAILABLE LANGUAGES
 ---
 
@@ -20,6 +27,7 @@ needing.
 - [x] R
 - [x] Ruby
 - [x] Vala
+- [x] Racket (Minimal)
 
 #### WIP LANGUAGES
 ---
@@ -39,6 +47,11 @@ needing.
 #### REQUIREMENTS
 ---
 
+Work is already in motion to make it so that you can build
+the packages of this repo without the need for any other
+repo but the community repo.
+But until then the following is necessary.
+
 In order to use this repo you need to have the following
 repos set-up and pointing to your ``KISS_PATH``.
 
@@ -54,7 +67,7 @@ You will need some packages in the above repo located in the
 `staging`, `testing`, and `android` directories.
 
 2. 
-You will also need @eudaldgr 's repo
+You will also need [@eudaldgr](https://github.com/eudaldgr)'s repo
 ```
 $ git clone https://github.com/eudaldgr/kiss-repo
 $ cd kiss-repo
