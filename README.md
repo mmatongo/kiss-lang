@@ -22,11 +22,12 @@ needing.
 - [x] Ruby
 - [x] Vala
 - [x] Racket (Minimal)
+- [x] Crystal
+
 
 #### WIP LANGUAGES
 ---
 
-- [x] Crystal
 - [x] C#
 - [x] Java
   - [x] Kotlin
