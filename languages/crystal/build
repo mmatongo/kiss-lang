@@ -13,7 +13,7 @@ make crystal \
     FLAGS="--no-debug" \
     CRYSTAL_PATH="src" \
     CRYSTAL_CONFIG_PATH="/usr/lib/crystal" \
-    CRYSTAL_CACHE_DIR=".tmp/crystal"
+    CRYSTAL_CACHE_DIR=".tmp/crystal" \
     LLVM_CONFIG="/usr/bin/llvm-config"
 
 
