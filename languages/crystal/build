@@ -1,12 +1,12 @@
 #!/bin/sh -e
 
-for patch in *.patch; do
-    patch -p1 < "$patch"
-done
-
 export PATH="core/bin:$PATH"
 export CRYSTAL_CONFIG_VERSION="0.35.1"
 export EXPORT_CC="CC=cc"
+
+for patch in *.patch; do
+    patch -p1 < "$patch"
+done
 
 make crystal \
     release=1 \
