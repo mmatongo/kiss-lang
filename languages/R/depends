@@ -7,7 +7,7 @@ freetype-harfbuzz
 fribidi
 glib
 icu
-lapack
+#lapack
 libICE
 libSM
 libX11

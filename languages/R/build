@@ -7,7 +7,8 @@ done
 # CXXFLAGS is propagated to /etc/R/Makeconf that is read when building
 # additional R modules. -D__MUSL__ is needed for some modules like Rcpp.
 # htps://github.com/RcppCore/Rcpp/issues/448
-export CXXFLAGS="$CXXFLAGS -D__MUSL__"
+export CXXFLAGS="$CXXFLAGS"
+export CFLAGS="$CFLAGS"
 
 rm -rf po
 
@@ -24,18 +25,21 @@ rm -rf po
 	--enable-R-shlib \
 	--disable-java \
 	--without-recommended-packages \
-	--with-blas=openblas \
-	--with-cairo \
-	--with-ICU \
-	--with-jpeglib \
-	--with-lapack \
-	--with-libpng \
-	--with-libtiff \
+	--without-blas \
+	--without-cairo \
+	--without-ICU \
+	--without-jpeglib \
+	--without-lapack \
+	--without-libpng \
+	--without-libtiff \
 	--with-tcltk \
-	--with-x
+	--with-x \
+	gcc=gfortran \
+	LIBnn=Lib
 
 make -j1
 make DESTDIR="$1" install
+
 # Install libRmath.so.
 make -j1 -C src/nmath/standalone
 make DESTDIR="$1" -C src/nmath/standalone install
