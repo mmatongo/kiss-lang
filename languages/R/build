@@ -12,11 +12,18 @@ export CFLAGS="$CFLAGS"
 
 rm -rf po
 
+# Because shite
+(
+    cd doc
+    touch NEWS.rds
+    touch NEWS.2.rds
+    touch NEWS.3.rds
+)
+
 ./configure \
 	--prefix=/usr \
     --sysconfdir=/etc/R \
 	--localstatedir=/var \
-	--mandir=/usr/share/man \
 	--libdir=/usr/lib \
 	rdocdir=/usr/share/doc/R \
 	rincludedir=/usr/include/R \
@@ -28,25 +35,26 @@ rm -rf po
 	--without-blas \
 	--without-cairo \
 	--without-ICU \
+    --without-docs \
 	--without-jpeglib \
 	--without-lapack \
 	--without-libpng \
 	--without-libtiff \
-	--with-tcltk \
-	--with-x \
+	--without-tcltk \
+	--without-x \
 	gcc=gfortran \
 	LIBnn=Lib
 
-make -j1
+make
 make DESTDIR="$1" install
 
 # Install libRmath.so.
-make -j1 -C src/nmath/standalone
+make -C src/nmath/standalone
 make DESTDIR="$1" -C src/nmath/standalone install
 
 # Fixup R wrapper script (taken from Arch).
-rm "$1/usr/lib/R/bin/R"
-ln -sf /usr/bin/R "$1/usr/lib/R/bin/R"
+rm -rf "$1usr/lib/R/bin/R"
+ln -sf "$1/usr/bin/R" "$1/usr/lib/R/bin/R"
 
 # Remove some useless files (COPYING is duplicated, it will be
 # in -doc, don't worry).
@@ -56,10 +64,13 @@ mkdir -p "$1/etc/R"
 
 # R apparently ignores --sysconfdir, so we must manually move configs
 # to /etc/R and make symlinks.
-cd "$1/usr/lib/R/etc"
-for f in *; do
-	mv "$f" "$1/etc/R" && ln -sf "/etc/R/$f" "$f"
-done
+(
+    cd "$1/usr/lib/R/etc"
+
+    for i in *; do
+        mv "$i" "$1/etc/R" && ln -sf "$1/etc/R/$i" "$i"
+    done
+)
 
 rm -rf "$1/usr/lib/R/library/translations"
 rm -rf "$1/usr/share/R/licenses"

@@ -1,38 +1,11 @@
 bzip2
-cairo
 curl
-expat
-fontconfig
-freetype-harfbuzz
-fribidi
-glib
-icu
-#lapack
-libICE
-libSM
-libX11
-libXau
-libXdamage
-libXext
-libXfixes
-libXmu
-libXrender
-libXt
-libXxf86vm
-libdrm
-libffi
-libjpeg-turbo
-libpng
+gcc-multi make
 libressl
-libwebp
-libxcb
-libxshmfence
-mesa
-ncurses
-pango
-pcre2
-pixman
-readline
-tiff
+ncurses make
+pcre2 make
+perl make
+readline make
 xz
 zlib
+
