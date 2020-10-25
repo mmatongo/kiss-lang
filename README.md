@@ -23,6 +23,7 @@ needing.
 - [x] Vala
 - [x] Racket (Minimal)
 - [x] Crystal
+- [x] Fortran
 
 
 #### WIP LANGUAGES
@@ -68,7 +69,14 @@ $ git clone https://github.com/eudaldgr/kiss-repo
 $ cd kiss-repo
 $ for i in -- $(ls -d -- */); do export KISS_PATH=$PWD/$i:$KISS_PATH:; done
 ```
-
-
 ---
 If you want to contribute, provide some insight or anything of the kind, feel free to make a pull or open an issue.
+
+#### NB
+- A few of the languages i.e R and D required a slight
+    modification to the `gcc` package, this modification is
+    non-fatal but begs to be mentioned because it adds a lot
+    of weight to the package, it exists on the staging
+    branch of my private repo for obvious reasons with the
+    top one being that it is a very hacky solution that will
+    be fixed in time.
