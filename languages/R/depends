@@ -1,10 +1,10 @@
 bzip2
 curl
-gcc-multi make
+gcc-multi
 libressl
-ncurses make
-pcre2 make
+ncurses
+pcre2
 perl make
-readline make
+readline
 xz
 zlib
