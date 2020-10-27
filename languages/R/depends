@@ -1,6 +1,6 @@
 bzip2
 curl
-gcc-multi
+gcc-multilib
 libressl
 ncurses
 pcre2
