@@ -24,6 +24,7 @@ needing.
 - [x] Racket (Minimal)
 - [x] Crystal
 - [x] Fortran
+- [x] D
 
 
 #### WIP LANGUAGES
@@ -36,7 +37,7 @@ needing.
   - [x] Clojure
   - [x] Erlang
     - [x] Elixir
-- [x] D
+- [x] Julia
 - [x] Zig
 
 
