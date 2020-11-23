@@ -1,0 +1,6 @@
+git+https://github.com/dlang/dmd#2a525e064cd300805f9a7ab5d1196837f18025ad dmd
+git+https://github.com/dlang/druntime#50e00803084a499b6bba5f84ffa54ebd79685a5b druntime
+git+https://github.com/dlang/phobos#beb35d3820ada092be36df1a12071aed71c85929 phobos
+patches/dmd-musl.patch
+patches/dmd-remove-tests.patch
+files/dmd-config.conf
