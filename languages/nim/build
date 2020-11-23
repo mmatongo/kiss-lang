@@ -36,7 +36,6 @@ install -Dm755 bin/nimble "$1/usr/bin/nimble"
 install -Dm755 bin/nimgrep "$1/usr/bin/nimgrep"
 install -Dm755 bin/nimpretty "$1/usr/bin/nimpretty"
 install -Dm755 bin/nimsuggest "$1/usr/bin/nimsuggest"
-#mkdir -pm755 "$1/{etc/nim,usr/lib/nim}"
 
 # Copy lib and config folders to respective dirs
 mkdir -p "$1/usr/lib/nim"
@@ -55,5 +54,9 @@ ln -s "$1/usr/lib/nim/libnimrtl.so" "$1/usr/lib/libnimrtl.so"
 
 # Nimble looks for nimscriptapi.nim in /usr/bin/nimblepkg/, of all places
 mkdir -p "$1/usr/share/nimble"
+
+# Copy everything to the right folder
 cp -r dist/nimble/src/nimblepkg "$1/usr/share/nimble"
+
+# Link the two folders
 ln -s "$1/usr/share/nimble" "$1/usr/bin/nimblepkg"
