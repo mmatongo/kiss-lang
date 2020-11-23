@@ -18,27 +18,27 @@ needing.
 - [x] Go
 - [x] Lua
 - [x] Ocaml
-- [x] R
+- [x] R [r-lang]
 - [x] Ruby
 - [x] Vala
 - [x] Racket (Minimal)
 - [x] Crystal
-- [x] Fortran
-- [x] D
+- [x] Fortran (Technically a compiler)
+- [x] D [d-lang]
 
 
 #### WIP LANGUAGES
 ---
 
-- [x] C#
-- [x] Java
+- [x] C# - [status: build failing]
+- [x] Java [status: on hold]
   - [x] Kotlin
   - [x] Scala
   - [x] Clojure
   - [x] Erlang
     - [x] Elixir
-- [x] Julia
-- [x] Zig
+- [x] Julia [status: failing]
+- [x] Zig [status: cannot build on musl (yet)]
 
 
 #### REQUIREMENTS
