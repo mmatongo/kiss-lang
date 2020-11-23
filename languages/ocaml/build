@@ -8,11 +8,11 @@ for patch in *.patch; do
 done
 
 ./configure \
-	--prefix /usr \
-	--bindir /usr/bin \
-	--libdir /usr/lib/ocaml \
-	--mandir /usr/share/man \
-    --disable-force-safe-string \
+    --prefix /usr \
+    --bindir /usr/bin \
+    --libdir /usr/lib/ocaml \
+    --mandir /usr/share/man \
+    --disable-force-safe-string
 
 make world.opt
 make DESTDIR="$1" install
