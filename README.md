@@ -81,3 +81,10 @@ If you want to contribute, provide some insight or anything of the kind, feel fr
     branch of my private repo for obvious reasons with the
     top one being that it is a very hacky solution that will
     be fixed in time.
+
+#### PROPOSED
+- I have thought about adding any and all depends on this
+    repo separate from everything else, this is primarily so
+    I can have some sort of established order. As it is the
+    current meandry of repos leaves me with nothing but
+    headaches.
