@@ -12,7 +12,8 @@ export CFLAGS="$CFLAGS"
 
 rm -rf po
 
-# Because shite
+# R refuses to build without these files which is weird considering that
+# they are not included in the source tarball
 (
     cd doc
     touch NEWS.rds
@@ -21,30 +22,30 @@ rm -rf po
 )
 
 ./configure \
-	--prefix=/usr \
+    --prefix=/usr \
     --sysconfdir=/etc/R \
-	--localstatedir=/var \
-	--libdir=/usr/lib \
+    --localstatedir=/var \
+    --libdir=/usr/lib \
     rhome=/usr  \
-	rdocdir=/usr/share/doc/R \
-	rincludedir=/usr/include/R \
-	rsharedir=/usr/share/R \
-	--disable-nls \
-	--enable-R-shlib \
-	--disable-java \
-	--without-recommended-packages \
-	--without-blas \
-	--without-cairo \
-	--without-ICU \
+    rdocdir=/usr/share/doc/R \
+    rincludedir=/usr/include/R \
+    rsharedir=/usr/share/R \
+    --disable-nls \
+    --enable-R-shlib \
+    --disable-java \
+    --without-recommended-packages \
+    --without-blas \
+    --without-cairo \
+    --without-ICU \
     --without-docs \
-	--without-jpeglib \
-	--without-lapack \
-	--without-libpng \
-	--without-libtiff \
-	--without-tcltk \
-	--without-x \
-	gcc=gfortran \
-	LIBnn=Lib
+    --without-jpeglib \
+    --without-lapack \
+    --without-libpng \
+    --without-libtiff \
+    --without-tcltk \
+    --without-x \
+    gcc=gfortran \
+    LIBnn=Lib
 
 make
 make DESTDIR="$1" install
