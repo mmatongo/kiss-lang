@@ -25,6 +25,7 @@ needing.
 - [x] Crystal
 - [x] Fortran (Technically a compiler)
 - [x] D [d-lang]
+- [x] Janet
 
 
 #### WIP LANGUAGES
