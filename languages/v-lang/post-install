@@ -1,0 +1,16 @@
+#!/bin/sh
+
+cat <<EOF
+
+NOTE: To enable 'v' add this to your
+      '.shellrc' or '.profile'.
+
+-> export VFLAGS='-cc gcc'
+
+NOTE: The V Repl is not supported as is yet.
+      The following needs to be executed to enable that.
+
+-> chmod 777 /usr/lib/vlang/cmd/tools
+
+
+EOF
