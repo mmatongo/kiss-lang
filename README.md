@@ -26,6 +26,7 @@ needing.
 - [x] Fortran (Technically a compiler)
 - [x] D [d-lang]
 - [x] Janet
+- [x] V [v-lang]
 
 
 #### WIP LANGUAGES
@@ -47,7 +48,7 @@ needing.
 
 Work is already in motion to make it so that you can build
 the packages of this repo without the need for any other
-repo but the community repo.
+repo.
 But until then the following is necessary.
 
 In order to use this repo you need to have the following
@@ -89,3 +90,18 @@ If you want to contribute, provide some insight or anything of the kind, feel fr
     I can have some sort of established order. As it is the
     current meandry of repos leaves me with nothing but
     headaches.
+
+#### UPDATES
+- New repo structure will take effect soon, a few natable
+    things however;
+    - I decided to roll my own KISS based(for now) os @noirlinux 
+      doing this has made it easier for me to incorporate
+      changed to `gcc` that would normally not be accepted (I
+      think).
+    - I have also decided to not limit the scope of the repo
+        and just add as many languages as I wanna and make
+        it easier for anyone that wants to setup a dev
+        station.
+    - If you're using `noirlinux` then you might not need
+        some elements from this repo as those are already
+        hard baked into the preinstalled `gcc`.
