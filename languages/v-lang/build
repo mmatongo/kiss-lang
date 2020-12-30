@@ -17,7 +17,4 @@ cp -r vlib "$1/usr/lib/vlang/"
 
 cp v.mod "$1/usr/lib/vlang/"
 
-# I have mixed feelings about this.
-#chmod 777 "$1/usr/lib/vlang/cmd/tools"
-
 ln -s /usr/lib/vlang/v "$1/usr/bin/v"
