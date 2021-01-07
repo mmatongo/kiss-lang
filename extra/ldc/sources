@@ -1,0 +1,5 @@
+https://github.com/ldc-developers/ldc/releases/download/v1.24.0/ldc-1.24.0-src.tar.gz
+patches/01-conf.patch
+#patches/3332.patch
+#patches/add-missing-musl-definitions.patch
+patches/disable-static-assert.patch
