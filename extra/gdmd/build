@@ -1,0 +1,3 @@
+#!/bin/sh -e
+
+install -Dm755 gdmd-script-0.1.0/dmd-script  "$1/usr/bin/gdmd"
