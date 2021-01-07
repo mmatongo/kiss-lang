@@ -1,0 +1,4 @@
+c9a21913e7fdac8ef6b33250b167aa1fc0a7b8a175145e26913a4c19d8a59b1f  libexecinfo-1.1.tar.bz2
+346727e58d9ffec3e8ffda8fb3ed3d72e66cdfe52c521e668e1c117e18ebfb23  10-execinfo.patch
+5690b663157b140a697746b9f279acb7646a63500d9e244013837b3eb233b1b2  20-define-gnu-source.patch
+4ac57be3adacdbdd05705e86a826f43252bcf576c4fba191b774c0fa6fe410c3  30-linux-makefile.patch
