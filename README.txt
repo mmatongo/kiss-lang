@@ -32,15 +32,15 @@ AVAILABLE LANGUAGES
 WIP LANGUAGES
 ---
 
-- [x] C# - [status: build failing]
-- [x] Java [status: on hold]
-  - [x] Kotlin
-  - [x] Scala
-  - [x] Clojure
-  - [x] Erlang
-    - [x] Elixir
-- [x] Julia [status: failing]
-- [x] Zig [status: cannot build on musl (yet)]
+- [-] C# - [status: build failing]
+- [-] Java [status: on hold]
+  - [-] Kotlin
+  - [-] Scala
+  - [-] Clojure
+  - [-] Erlang
+    - [-] Elixir
+- [-] Julia [status: failing]
+- [-] Zig [status: cannot build on musl (yet)]
 
 
 REQUIREMENTS
@@ -63,20 +63,20 @@ NB
     top one being that it is a very hacky solution that will
     be fixed in time.
 
-#### PROPOSED
+PROPOSED
 - I have thought about adding any and all depends on this
     repo separate from everything else, this is primarily so
     I can have some sort of established order. As it is the
     current meandry of repos leaves me with nothing but
     headaches.
 
-#### UPDATES
+UPDATES
 - New repo structure will take effect soon, a few natable
-    things however;
+  things however;
     - I decided to roll my own KISS based(for now) os @noirlinux 
-      doing this has made it easier for me to incorporate
-      changed to [gcc] that would normally not be accepted (I
-      think).
+        doing this has made it easier for me to incorporate
+        changed to [gcc] that would normally not be accepted (I
+        think).
     - I have also decided to not limit the scope of the repo
         and just add as many languages as I wanna and make
         it easier for anyone that wants to setup a dev
