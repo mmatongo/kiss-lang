@@ -27,7 +27,11 @@ AVAILABLE LANGUAGES
 - [x] D [d-lang]
 - [x] Janet
 - [x] V [v-lang]
-
+- [x] Chez Scheme
+- [x] GForth
+- [x] PForth
+- [x] LuaJIT
+- [x] Retro
 
 WIP LANGUAGES
 ---

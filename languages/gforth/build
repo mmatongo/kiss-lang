@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+CFLAGS="$CFLAGS -std=gnu99" ./configure \
+    --prefix=/usr \
+    --without-check
+
+make -j1
+make DESTDIR="$1" install

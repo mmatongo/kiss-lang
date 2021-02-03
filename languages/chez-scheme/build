@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+./configure \
+    --installprefix=/usr \
+    --temproot="$1" \
+    --threads \
+    --disable-x11 \
+    --disable-curses
+
+make DESTDIR="$1" install
