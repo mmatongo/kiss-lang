@@ -32,11 +32,11 @@ AVAILABLE LANGUAGES
 - [x] PForth
 - [x] LuaJIT
 - [x] Retro
+- [x] C# (mono)
 
 WIP LANGUAGES
 ---
 
-- [-] C# - [status: build failing]
 - [-] Java [status: on hold]
   - [-] Kotlin
   - [-] Scala
@@ -45,7 +45,7 @@ WIP LANGUAGES
     - [-] Elixir
 - [-] Julia [status: failing]
 - [-] Zig [status: cannot build on musl (yet)]
-
+- [-] F# (f-sharp)
 
 REQUIREMENTS
 ---
