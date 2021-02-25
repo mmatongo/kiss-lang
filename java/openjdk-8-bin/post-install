@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+cat <<EOF	
+NOTE: To enable 'java' add this to your	
+      '.shellrc' or '.profile'.
+
+-> export JAVA_HOME=/usr/lib/java
+    
+-> Add '/usr/lib/java' to your 'PATH'
+
+NOTE: The that this is not a native build.	
+      Please report all bugs and errors.		
+EOF
