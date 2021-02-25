@@ -33,16 +33,17 @@ AVAILABLE LANGUAGES
 - [x] LuaJIT
 - [x] Retro
 - [x] C# (mono)
+- [x] Java [non native]
 
 WIP LANGUAGES
 ---
 
-- [-] Java [status: on hold]
-  - [-] Kotlin
-  - [-] Scala
-  - [-] Clojure
-  - [-] Erlang
-    - [-] Elixir
+- [] Java-native [status: in progress]
+- [-] Kotlin [status: in progress]
+- [-] Scala [status: in progress]
+- [-] Clojure [status: in progress]
+- [-] Erlang [status: in progress]
+  - [-] Elixir
 - [-] Julia [status: failing]
 - [-] Zig [status: cannot build on musl (yet)]
 - [-] F# (f-sharp)
@@ -62,29 +63,6 @@ NB
 - A few of the languages i.e R and D required a slight
     modification to the [gcc] package, this modification is
     non-fatal but begs to be mentioned because it adds a lot
-    of weight to the package, it exists on the staging
-    branch of my private repo for obvious reasons with the
-    top one being that it is a very hacky solution that will
-    be fixed in time.
-
-PROPOSED
-- I have thought about adding any and all depends on this
-    repo separate from everything else, this is primarily so
-    I can have some sort of established order. As it is the
-    current meandry of repos leaves me with nothing but
-    headaches.
-
-UPDATES
-- New repo structure will take effect soon, a few natable
-  things however;
-    - I decided to roll my own KISS based(for now) os @noirlinux 
-        doing this has made it easier for me to incorporate
-        changed to [gcc] that would normally not be accepted (I
-        think).
-    - I have also decided to not limit the scope of the repo
-        and just add as many languages as I wanna and make
-        it easier for anyone that wants to setup a dev
-        station.
-    - If you're using [noirlinux] then you might not need
-        some elements from this repo as those are already
-        hard baked into the preinstalled [gcc].
+    of weight to the package, it exists on the extras branch
+    branch of this repo. It is a very hacky solution that will
+    be fixed in time (I really have no time).
