@@ -1,7 +1,0 @@
-#!/bin/sh -e
-
-cd openjdk-8-bin
-
-mkdir -p "$1/usr/lib/java"
-
-cp -r * "$1/usr/lib/java/"
