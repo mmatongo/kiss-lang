@@ -8,8 +8,8 @@ printf "+-----------------------------------------------------+
 |                                                     |
 | I will fix it but till then don't, just don't.      |
 |                                                     |
-|  [x] java (openjdk-jre8)                            |
-|           (openjdk-jdk8)                            |
+|  [x] java (openjdk-jre8-bin)                        |
+|           (openjdk8-bin)                            |
 |                                                     |
 |                                                     |
 |                                                     |
