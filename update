@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+printf "+-----------------------------------------------------+
+| ATTENTION                                03/03/2020 |
++-----------------------------------------------------+
+| Please for the love of God avoid installing         |
+| openjdk-jre and openjdk-jdk at the same time        |
+|                                                     |
+| I will fix it but till then don't, just don't.      |
+|                                                     |
+|  [x] java (openjdk-jre8)                            |
+|           (openjdk-jdk8)                            |
+|                                                     |
+|                                                     |
+|                                                     |
++-----------------------------------------------------+\n"
+
