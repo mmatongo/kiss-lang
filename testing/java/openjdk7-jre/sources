@@ -1,0 +1,27 @@
+https://icedtea.classpath.org/download/source/icedtea-2.6.24.tar.xz
+https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.14-bin.tar.gz apache
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/corba.tar.bz2?no-extract
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/hotspot.tar.bz2 hotspot
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/hotspot.tar.bz2?no-extract
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/jaxp.tar.bz2?no-extract
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/jaxws.tar.bz2?no-extract
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/jdk.tar.bz2 jdk
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/jdk.tar.bz2?no-extract
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/langtools.tar.bz2?no-extract
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/openjdk.tar.bz2 openjdk
+http://icedtea.wildebeest.org/download/drops/icedtea7/2.6.24/openjdk.tar.bz2?no-extract
+https://github.com/mozilla/rhino/releases/download/Rhino1_7_7_2_Release/rhino-1.7.7.2.zip
+patches/fix-xattr-include.patch
+patches/icedtea-cpio.patch
+patches/icedtea-hotspot-musl.patch
+patches/icedtea-hotspot-noagent-musl.patch
+patches/icedtea-hotspot-uclibc-fixes.patch
+#patches/icedtea-jdk-disable-vfork.patch
+#patches/icedtea-jdk-execinfo.patch
+#patches/icedtea-jdk-fix-build.patch
+#patches/icedtea-jdk-fix-compile-optional.patch
+#patches/icedtea-jdk-fix-gcc10.patch
+#patches/icedtea-jdk-fix-ipv6-init.patch
+#patches/icedtea-jdk-musl.patch
+#patches/icedtea-jdk-no-soname.patch
+#patches/icedtea-jdk-xattr.patch

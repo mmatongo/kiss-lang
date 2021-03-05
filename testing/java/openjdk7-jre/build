@@ -1,0 +1,55 @@
+#!/bin/sh -e
+
+export CFLAGS="$CFLAGS -march=x86-64 -mtune=generic -pipe -Os"
+export CXXFLAGS="$CXXFLAGS -march=x86-64 -mtune=generic -pipe -Os"
+export PATH="$PATH:/usr/lib/jvm/*/bin"
+
+{
+    for tarball in *.tar.*\?no-extract; do
+        mv -f "$tarball" "${tarball%%\?no-extract}"
+    done
+}
+
+
+for patch in *.patch; do
+    patch -p1 < "$patch"
+done
+
+sed -e "s/--check/-c/g" -i Makefile.am
+
+./autogen.sh
+
+./configure \
+    --prefix=/usr/lib/openjdk7 \
+    --sysconfdir=/etc \
+    --mandir=/usr/share/man \
+    --localstatedir=/var \
+    --with-parallel-jobs=${JOBS:-2} \
+    --disable-dependency-tracking \
+    --disable-downloading \
+    --disable-arm32-jit \
+    --disable-docs \
+    --disable-system-lcms \
+    --disable-system-pcsc \
+    --disable-system-sctp \
+    --disable-system-kerberos \
+    --disable-system-gtk \
+    --with-rhino=jar=rhino/rhino1.7.7.2/lib/rhino-1.7.7.2.jar \ 
+    --with-openjdk-src-gz=openjdk.tar.bz2 \
+    --with-hotspot-src-gz=hotspot.tar.bz2 \
+    --with-corba-src-gz=corba.tar.bz2 \
+    --with-jaxp-src-gz=jaxp.tar.bz2 \
+    --with-jaxws-src-gz=jaxws.tar.bz2 \
+    --with-jdk-src-gz=jdk.tar.bz2 \
+    --with-langtools-src-gz=langtools.tar.bz2 \
+    --with-jdk-home="/usr/lib/jvm/java-openjdk" \
+    --with-pkgversion="KISS 7.281.2.6.24"
+
+make icedtea-boot SHELL=/bin/sh
+make
+
+mkdir -p "$1/usr/lib/openjdk7"
+
+cp -r openjdk.build/j2sdk-image/* "$1/usr/lib/openjdk7"
+
+rm "$1/usr/lib/openjdk7/src.zip"
