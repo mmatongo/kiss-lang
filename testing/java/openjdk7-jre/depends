@@ -20,3 +20,4 @@ libXrender make
 alsa-lib make
 fontconfig make
 libXcomposite make
+openjdk8-bin make
