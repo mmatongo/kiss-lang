@@ -1,5 +1,2 @@
-https://github.com/crystal-lang/crystal/archive/0.35.1.tar.gz
+https://github.com/crystal-lang/crystal/archive/1.0.0.tar.gz
 https://dev.alpinelinux.org/archive/crystal/crystal-0.35.0-x86_64-alpine-linux-musl.tar.gz core
-patches/global_isel.patch
-patches/c_abi.patch
-patches/valist.patch

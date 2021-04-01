@@ -4,17 +4,13 @@ export PATH="core/bin:$PATH"
 export CRYSTAL_CONFIG_VERSION="0.35.1"
 export EXPORT_CC="CC=cc"
 
-for patch in *.patch; do
-    patch -p1 < "$patch"
-done
-
 make crystal \
-    release=1 \
-    FLAGS="--no-debug" \
-    CRYSTAL_PATH="src" \
     CRYSTAL_CONFIG_PATH="/usr/lib/crystal" \
     CRYSTAL_CACHE_DIR=".tmp/crystal" \
-    LLVM_CONFIG="/usr/bin/llvm-config"
+    LLVM_CONFIG="/usr/bin/llvm-config" \
+    release=1 \
+    FLAGS="--no-debug" \
+    CRYSTAL_PATH="src"
 
 
 install -Dm755 .build/crystal "$1/usr/bin/crystal"
