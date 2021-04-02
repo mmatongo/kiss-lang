@@ -34,6 +34,7 @@ AVAILABLE LANGUAGES
 - [x] Retro
 - [x] C# (mono)
 - [x] Java [non native]
+- [x] Zig
 
 WIP LANGUAGES
 ---
@@ -45,7 +46,6 @@ WIP LANGUAGES
 - [-] Erlang [status: in progress]
   - [-] Elixir
 - [-] Julia [status: failing]
-- [-] Zig [status: cannot build on musl (yet)]
 - [-] F# (f-sharp)
 
 REQUIREMENTS
