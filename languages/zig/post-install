@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cat <<EOF
+If you use vanilla LLVM from KISS Linux, you need to delete
+-DLLVM_TARGETS_TO_BUILD in your llvm package to leverage the
+cross-compiling feature of Zig. Otherwise, you can keep it as is.
+
+If you rebuilt your LLVM to use a different configuration, you need to
+rebuild Zig.
+
+To see the architectures that your Zig build supports, you can use this
+command:
+
+$ llvm-config --targets-built
+EOF
