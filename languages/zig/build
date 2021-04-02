@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export DESTDIR="$1"
+
+cmake -B build \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DZIG_PREFER_CLANG_CPP_DYLIB=ON
+
+cmake --build build
+cmake --install build
