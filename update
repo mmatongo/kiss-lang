@@ -1,15 +1,15 @@
 #!/bin/sh -e
 
 printf "+-----------------------------------------------------+
-| ATTENTION                                03/03/2020 |
+| ATTENTION                                02/04/2021 |
 +-----------------------------------------------------+
-| Please for the love of God avoid installing         |
-| openjdk-jre and openjdk-jdk at the same time        |
-|                                                     |
+| All packages have been updated except for a few     |
+| that require additional work to get them fully      |
+| functional                                          |
 | I will fix it but till then don't, just don't.      |
 |                                                     |
-|  [x] java (openjdk-jre8-bin)                        |
-|           (openjdk8-bin)                            |
+|  [x] zig                                            |
+|                                                     |
 |                                                     |
 |                                                     |
 |                                                     |
