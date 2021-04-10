@@ -1,10 +1,6 @@
-bzip2
-curl
 gcc-multilib
-libressl
 ncurses
 pcre2
 perl make
 readline
 xz
-zlib
