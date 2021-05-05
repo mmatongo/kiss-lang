@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+make MYCFLAGS="$CFLAGS" MYLDFLAGS="$LDFLAGS" PREFIX=/usr
+make install DESTDIR="$1" PREFIX=/usr
