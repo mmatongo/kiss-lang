@@ -55,7 +55,7 @@ make -C src/nmath/standalone
 make DESTDIR="$1" -C src/nmath/standalone install
 
 # Fixup R wrapper script (taken from Arch).
-ln -sf "$1/usr/bin/R" "$1/usr/lib/R/bin/R"
+ln -sf "/usr/bin/R" "$1/usr/lib/R/bin/R"
 
 # Remove some useless files (COPYING is duplicated, it will be
 # in -doc, don't worry).
