@@ -3,9 +3,9 @@
 export AS="cc -c"
 export ASPP="cc -c"
 
-for patch in *.patch; do
-    patch -p1 < "$patch"
-done
+#for patch in *.patch; do
+#    patch -p1 < "$patch"
+#done
 
 ./configure \
     --prefix /usr \
