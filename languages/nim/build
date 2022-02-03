@@ -2,7 +2,8 @@
 
 (
     cd csources
-
+    
+    chmod +x build.sh
     # Build nim source files
     ./build.sh
 )
