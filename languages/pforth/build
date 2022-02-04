@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-cd build/unix
+cd platforms/unix
 make all EXTRA_CCOPTS='-DPF_DEFAULT_DICTIONARY=\"/usr/share/pforth/pforth.dic\"'
 
 mkdir -p "$1/usr/bin"
