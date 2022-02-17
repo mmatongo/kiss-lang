@@ -1,11 +1,12 @@
-#!/bin/sh
+#!/bin/sh -e
 
-export DESTDIR="$1"
+unset AR NM CC CXX RANLIB DESTDIR
 
-cmake -B build \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DZIG_PREFER_CLANG_CPP_DYLIB=ON
+TARGET="x86_64-linux-musl"
+MCPU="native"
 
-cmake --build build
-cmake --install build
+./build -j"$(nproc)" "$TARGET" "$MCPU"
+
+mkdir -p "$1/usr/bin"
+cp    "out/zig-${TARGET}-${MCPU}/bin/zig" "$1/usr/bin/zig"
+cp -r "out/zig-${TARGET}-${MCPU}/lib"     "$1/usr"
