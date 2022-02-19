@@ -7,5 +7,5 @@ patch -p1 < gc-missing-header.patch
 
 sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
-make -j$(nproc)
+make -j"$(nproc)"
 make install
