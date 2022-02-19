@@ -1,0 +1,11 @@
+#!/bin/sh -e
+
+patch -p1 < gc-missing-header.patch
+
+./autogen.sh
+./configure --enable-static --disable-shared --enable-cplusplus --disable-docs
+
+sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+make -j$(nproc)
+make install
