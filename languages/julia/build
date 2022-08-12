@@ -2,12 +2,14 @@
 
 export PATH="bin:$PATH"
 
+build_opts="prefix=/usr \
+  bindir=/usr/bin \
+  sysconfdir=/etc \
+  MARCH=x86-64"
+
+
 git submodule init
 git submodule update
 
-make
-make -C install \
-  prefix=/usr \
-  libexecdir=/usr/lib \
-  sysconfdir=/etc
-
+make release VERBOSE=1 JLDFLAGS=${LDFLAGS} $build_opts
+make DESTDIR="$1" install VERBOSE=1 $build_opts
